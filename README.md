@@ -27,36 +27,36 @@
 
 ### 截图
 
-![演示GIF](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover1.gif?raw=true)
+![演示GIF](screenshot/2020/1.0.1.2/Cover1.gif?raw=true)
 ## 在线视频
-![在线视频](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover1.png?raw=true)
+![在线视频](screenshot/2020/1.0.1.2/Cover1.png?raw=true)
 ## 列表与属性
-![列表与属性](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover2.png?raw=true)
-![视频属性](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover14.png?raw=true)
+![列表与属性](screenshot/2020/1.0.1.2/Cover2.png?raw=true)
+![视频属性](screenshot/2020/1.0.1.2/Cover14.png?raw=true)
 ## 播放设置
-![播放设置](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover3.png?raw=true)
+![播放设置](screenshot/2020/1.0.1.2/Cover3.png?raw=true)
 ## 色彩设置
-![色彩设置](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover4.png?raw=true)
+![色彩设置](screenshot/2020/1.0.1.2/Cover4.png?raw=true)
 ## 声音设置
-![声音设置](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover5.png?raw=true)
+![声音设置](screenshot/2020/1.0.1.2/Cover5.png?raw=true)
 ## 下载设置
-![下载设置](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover6.jpg?raw=true)
+![下载设置](screenshot/2020/1.0.1.2/Cover6.jpg?raw=true)
 ## 右键菜单
-![右键菜单](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover7.png?raw=true)
+![右键菜单](screenshot/2020/1.0.1.2/Cover7.png?raw=true)
 ## 常规设置
-![常规设置](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover8.png?raw=true)
-![常规设置2](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover9.png?raw=true)
+![常规设置](screenshot/2020/1.0.1.2/Cover8.png?raw=true)
+![常规设置2](screenshot/2020/1.0.1.2/Cover9.png?raw=true)
 ## 高级设置
-![高级设置](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover10.png?raw=true)
+![高级设置](screenshot/2020/1.0.1.2/Cover10.png?raw=true)
 ## 外观设置
-![外观设置](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover11.png?raw=true)
+![外观设置](screenshot/2020/1.0.1.2/Cover11.png?raw=true)
 ## 隐私设置
-![隐私设置](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover12.png?raw=true)
+![隐私设置](screenshot/2020/1.0.1.2/Cover12.png?raw=true)
 ## 关于
-![关于](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2020/1.0.1.2/Cover13.png?raw=true)
+![关于](screenshot/2020/1.0.1.2/Cover13.png?raw=true)
 ---
-![Cover1](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2014/Cover1.png?raw=true)
-![Cover2](https://github.com/Haku-Men/TPlayer/blob/main/screenshot/2014/Cover2.png?raw=true)
+![Cover1](screenshot/2014/Cover1.png?raw=true)
+![Cover2](screenshot/2014/Cover2.png?raw=true)
 
 ****
 ## 鸣谢 ✨
