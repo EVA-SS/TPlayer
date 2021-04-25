@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29721.120
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPlayer", "TPlayer\TPlayer.csproj", "{D611D0E2-0E4C-4D1E-9D66-E3F11003C84E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSkin", "TSkin\TSkin.csproj", "{E97E4738-80C4-4BA1-BD31-488FCAB08E53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPlayerAssist", "TPlayerAssist\TPlayerAssist.csproj", "{7CF6D28A-C596-49E2-B9AF-DF9A8CF240B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{97772D00-9A59-4275-938C-FB51719B56E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPlayerSupport", "TPlayerSupport\TPlayerSupport.csproj", "{7D2BDE53-9B5A-44B3-80E6-93B8FB07B6F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "resources1", "Plugins\resources1\resources1.csproj", "{14037C5F-9EEE-4AFA-83A5-CD9B6B415AC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zimuku", "Plugins\zimuku\zimuku.csproj", "{121F4B94-F733-4589-B0A5-E1CFC4F366AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D611D0E2-0E4C-4D1E-9D66-E3F11003C84E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D611D0E2-0E4C-4D1E-9D66-E3F11003C84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D611D0E2-0E4C-4D1E-9D66-E3F11003C84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D611D0E2-0E4C-4D1E-9D66-E3F11003C84E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97E4738-80C4-4BA1-BD31-488FCAB08E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97E4738-80C4-4BA1-BD31-488FCAB08E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97E4738-80C4-4BA1-BD31-488FCAB08E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97E4738-80C4-4BA1-BD31-488FCAB08E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF6D28A-C596-49E2-B9AF-DF9A8CF240B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF6D28A-C596-49E2-B9AF-DF9A8CF240B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF6D28A-C596-49E2-B9AF-DF9A8CF240B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF6D28A-C596-49E2-B9AF-DF9A8CF240B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D2BDE53-9B5A-44B3-80E6-93B8FB07B6F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D2BDE53-9B5A-44B3-80E6-93B8FB07B6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D2BDE53-9B5A-44B3-80E6-93B8FB07B6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D2BDE53-9B5A-44B3-80E6-93B8FB07B6F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14037C5F-9EEE-4AFA-83A5-CD9B6B415AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14037C5F-9EEE-4AFA-83A5-CD9B6B415AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14037C5F-9EEE-4AFA-83A5-CD9B6B415AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14037C5F-9EEE-4AFA-83A5-CD9B6B415AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{121F4B94-F733-4589-B0A5-E1CFC4F366AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{121F4B94-F733-4589-B0A5-E1CFC4F366AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{121F4B94-F733-4589-B0A5-E1CFC4F366AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{121F4B94-F733-4589-B0A5-E1CFC4F366AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{14037C5F-9EEE-4AFA-83A5-CD9B6B415AC0} = {97772D00-9A59-4275-938C-FB51719B56E5}
+		{121F4B94-F733-4589-B0A5-E1CFC4F366AE} = {97772D00-9A59-4275-938C-FB51719B56E5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80816D43-0B30-4937-A8B6-0681F174EC12}
+	EndGlobalSection
+EndGlobal

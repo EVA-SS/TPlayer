@@ -1,0 +1,841 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D611D0E2-0E4C-4D1E-9D66-E3F11003C84E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TPlayer</RootNamespace>
+    <AssemblyName>TPlayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.11.33.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.33\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Id3.Net, Version=0.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ID3.0.6.0\lib\net40\Id3.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ini-parser-netstandard.2.5.2\lib\net20\INIFileParser.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2021.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2021.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.24.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.24.0\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.112.2\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\APlayerPlugin.cs" />
+    <Compile Include="Api\Down\DownTotalCore.cs" />
+    <Compile Include="Api\Models.cs" />
+    <Compile Include="Api\PluginApi.cs" />
+    <Compile Include="Api\UpdateCore.cs" />
+    <Compile Include="Api\Api.cs" />
+    <Compile Include="Api\DownLib.cs" />
+    <Compile Include="Api\Down\DownCore.cs" />
+    <Compile Include="Api\Down\Global.cs" />
+    <Compile Include="Api\Down\HLSTags.cs" />
+    <Compile Include="Api\Down\Parser.cs" />
+    <Compile Include="Api\LogHelper.cs" />
+    <Compile Include="Api\PlatformHelper.cs" />
+    <Compile Include="Api\SystemSettings.cs" />
+    <Compile Include="Api\HotKey.cs" />
+    <Compile Include="Api\Win32.cs" />
+    <Compile Include="Api\Compression.cs" />
+    <Compile Include="Api\FontAwesome.cs" />
+    <Compile Include="BugReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BugReport.Designer.cs">
+      <DependentUpon>BugReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeedBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedBack.Designer.cs">
+      <DependentUpon>FeedBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\DownCodecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\DownCodecs.Designer.cs">
+      <DependentUpon>DownCodecs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\DLNA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\DLNA.Designer.cs">
+      <DependentUpon>DLNA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Downitem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm\Downitem.Designer.cs">
+      <DependentUpon>Downitem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\DownList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\DownList.Designer.cs">
+      <DependentUpon>DownList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSetting.Designer.cs">
+      <DependentUpon>EffectSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Controller\Controller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Controller\Controller.Designer.cs">
+      <DependentUpon>Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Controller\Header.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Controller\Header.Designer.cs">
+      <DependentUpon>Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP7.Designer.cs">
+      <DependentUpon>EffectSettingP7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP1.Designer.cs">
+      <DependentUpon>EffectSettingP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP2.Designer.cs">
+      <DependentUpon>EffectSettingP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP3.Designer.cs">
+      <DependentUpon>EffectSettingP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP4.Designer.cs">
+      <DependentUpon>EffectSettingP4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP6.Designer.cs">
+      <DependentUpon>EffectSettingP6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm\EffectSetting\EffectSettingP5.Designer.cs">
+      <DependentUpon>EffectSettingP5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmSearch.Designer.cs">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Mask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Message.Designer.cs">
+      <DependentUpon>Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\HasDownLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\HasDownLoad.Designer.cs">
+      <DependentUpon>HasDownLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\OpenUrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\OpenUrl.Designer.cs">
+      <DependentUpon>OpenUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\PlayErr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\PlayErr.designer.cs">
+      <DependentUpon>PlayErr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Popup\Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Popup\Dialog.Designer.cs">
+      <DependentUpon>Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Popup\Prompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Popup\Prompt.Designer.cs">
+      <DependentUpon>Prompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Prompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Prompt.Designer.cs">
+      <DependentUpon>Prompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Property.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Property.Designer.cs">
+      <DependentUpon>Property.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\UIListFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\UIListFile.Designer.cs">
+      <DependentUpon>UIListFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\UIListSel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\UIListSel.Designer.cs">
+      <DependentUpon>UIListSel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Update.designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Web\Util\M3U8Util.cs" />
+    <Compile Include="Frm\Web\Util\UUIDUtil.cs" />
+    <Compile Include="Frm\Web\Util\VideoFormatUtil.cs" />
+    <Compile Include="Frm\WebBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\WebBrowser.Designer.cs">
+      <DependentUpon>WebBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Web\WebVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Web\WebVideo.Designer.cs">
+      <DependentUpon>WebVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Web\WebVideoDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Web\WebVideoDetail.Designer.cs">
+      <DependentUpon>WebVideoDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Web\WebVideoPoly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Web\WebVideoPoly.Designer.cs">
+      <DependentUpon>WebVideoPoly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Web\WebZimu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Web\WebZimu.Designer.cs">
+      <DependentUpon>WebZimu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Web\Core\Common\DBUtility\SQLiteDBHelper.cs" />
+    <Compile Include="Frm\Web\Core\Common\DBUtility\SQLiteDBHelperFactory.cs" />
+    <Compile Include="Frm\Web\Core\Common\Utils.cs" />
+    <Compile Include="Frm\Web\Core\ConfigDAL.cs" />
+    <Compile Include="Frm\Web\Core\Models\OK\Ok_API.cs" />
+    <Compile Include="Frm\Web\Core\Models\pic_UrlData.cs" />
+    <Compile Include="Frm\Web\Core\Models\TitleName.cs" />
+    <Compile Include="Frm\Web\Core\PicCacheDataDAL.cs" />
+    <Compile Include="Frm\Web\Core\SourceFilter\OK_DataAPI.cs" />
+    <Compile Include="Frm\Web\Core\SourceFilter\OK_DataHtml.cs" />
+    <Compile Include="Frm\Web\WebApiVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Web\WebApiVideo.Designer.cs">
+      <DependentUpon>WebApiVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Loading.designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Frm\PromptByBuffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\PromptByBuffer.Designer.cs">
+      <DependentUpon>PromptByBuffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Frm\Controller\Sidebar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Controller\Sidebar.Designer.cs">
+      <DependentUpon>Sidebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Controller\SidebarBtn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Controller\SidebarBtn.Designer.cs">
+      <DependentUpon>SidebarBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Api\SystemSleepManagement.cs" />
+    <Compile Include="Setting\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\SettingP1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\SettingP1.Designer.cs">
+      <DependentUpon>SettingP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\SettingP2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\SettingP2.Designer.cs">
+      <DependentUpon>SettingP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\SettingP7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\SettingP7.Designer.cs">
+      <DependentUpon>SettingP7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\SettingP6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\SettingP6.Designer.cs">
+      <DependentUpon>SettingP6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\SettingP3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\SettingP3.Designer.cs">
+      <DependentUpon>SettingP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\SettingP4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\SettingP4.Designer.cs">
+      <DependentUpon>SettingP4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\SettingP5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\SettingP5.Designer.cs">
+      <DependentUpon>SettingP5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMsg.Designer.cs">
+      <DependentUpon>TMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TPlayer.Designer.cs">
+      <DependentUpon>TPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Controller\Volume.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Controller\Volume.Designer.cs">
+      <DependentUpon>Volume.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\List\DownList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\List\WebVideoList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\List\VideoList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="BugReport.resx">
+      <DependentUpon>BugReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedBack.resx">
+      <DependentUpon>FeedBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\DLNA.resx">
+      <DependentUpon>DLNA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Controller\Sidebar.resx">
+      <DependentUpon>Sidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\DownCodecs.resx">
+      <DependentUpon>DownCodecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Downitem.resx">
+      <DependentUpon>Downitem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\DownList.resx">
+      <DependentUpon>DownList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\EffectSetting\EffectSetting.resx">
+      <DependentUpon>EffectSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\EffectSetting\EffectSettingP7.resx">
+      <DependentUpon>EffectSettingP7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\EffectSetting\EffectSettingP1.resx">
+      <DependentUpon>EffectSettingP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\EffectSetting\EffectSettingP2.resx">
+      <DependentUpon>EffectSettingP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\EffectSetting\EffectSettingP3.resx">
+      <DependentUpon>EffectSettingP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\EffectSetting\EffectSettingP4.resx">
+      <DependentUpon>EffectSettingP4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\EffectSetting\EffectSettingP6.resx">
+      <DependentUpon>EffectSettingP6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\EffectSetting\EffectSettingP5.resx">
+      <DependentUpon>EffectSettingP5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmSearch.resx">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Message.resx">
+      <DependentUpon>Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\HasDownLoad.resx">
+      <DependentUpon>HasDownLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\PlayErr.resx">
+      <DependentUpon>PlayErr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Prompt.resx">
+      <DependentUpon>Prompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\PromptByBuffer.resx">
+      <DependentUpon>PromptByBuffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\OpenUrl.resx">
+      <DependentUpon>OpenUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Property.resx">
+      <DependentUpon>Property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\UIListFile.resx">
+      <DependentUpon>UIListFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\UIListSel.resx">
+      <DependentUpon>UIListSel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Update.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\WebBrowser.resx">
+      <DependentUpon>WebBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Web\WebVideo.resx">
+      <DependentUpon>WebVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Web\WebApiVideo.resx">
+      <DependentUpon>WebApiVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Web\WebVideoDetail.resx">
+      <DependentUpon>WebVideoDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Web\WebVideoPoly.resx">
+      <DependentUpon>WebVideoPoly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Web\WebZimu.resx">
+      <DependentUpon>WebZimu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Setting\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\SettingP1.resx">
+      <DependentUpon>SettingP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\SettingP2.resx">
+      <DependentUpon>SettingP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\SettingP7.resx">
+      <DependentUpon>SettingP7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\SettingP6.resx">
+      <DependentUpon>SettingP6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\SettingP3.resx">
+      <DependentUpon>SettingP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\SettingP4.resx">
+      <DependentUpon>SettingP4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\SettingP5.resx">
+      <DependentUpon>SettingP5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMsg.resx">
+      <DependentUpon>TMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TPlayer.resx">
+      <DependentUpon>TPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TPlayerSupport\TPlayerSupport.csproj">
+      <Project>{7d2bde53-9b5a-44b3-80e6-93b8fb07b6f1}</Project>
+      <Name>TPlayerSupport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TSkin\TSkin.csproj">
+      <Project>{e97e4738-80c4-4ba1-bd31-488fcab08e53}</Project>
+      <Name>TSkin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Resources\Application\btn_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\btn_max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\btn_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\btn_min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Font\DroidSansFallback.ttf" />
+    <None Include="Resources\Font\DroidSansMonoPy.ttf" />
+    <None Include="Resources\Font\FontUI.ttf" />
+    <None Include="Resources\Font\FZHTJW.TTF" />
+    <None Include="Resources\Player\btn_pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\btn_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\btn_stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\btn_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\IOS\ios-settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\IOS\ios-volume-high.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\IOS\ios-volume-low.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\IOS\ios-volume-mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\IOS\ios-volume-m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\btn_restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\IOS\ios-volume-mutes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\btn_mini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\btn_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\btn_top_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\btn_mini_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\btn_fullscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\btn_fullscreen_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\IOS\ios-photo-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_rotate1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_rotate2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_color3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_color1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_color2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\IOS\ios-tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_tv_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_tv_win.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Material\material_pause_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Material\material_play_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Material\material_exit_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Material\material_skip_next_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Material\material_tv_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\IOS\ios-information-circ-p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="APlayer3Lib">
+      <Guid>{97830570-35FE-4195-83DE-30E79B718713}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>True</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAPlayer3Lib">
+      <Guid>{97830570-35FE-4195-83DE-30E79B718713}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>True</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\btn_cir_closeh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\btn_cir_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cooperate\zimuku.la.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_db.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_mp4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_zip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_sub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Vr\vr1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Vr\vr2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Vr\vr3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Vr\vr4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Vr\vr5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Vr\vr6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Vr\vr7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\Vr\vr8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon\icon_warn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon\icon_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon\icon_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon\icon_success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_mp4d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\IOS\ios-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bug.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="feedback.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon\icon_bug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon\icon_feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backimg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cover_pressed2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player\icon_DLNA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TLogoDown.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application\TPlayerAssist.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bg\bg_ribbon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon\icon_good.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_videoc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_videod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_subc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileType\filetype_temp.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.112.2\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.112.2\build\net40\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.112.2\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.112.2\build\net40\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>
